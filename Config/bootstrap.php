@@ -24,9 +24,8 @@ function UsermgmtInIt(&$controller)	{
 	date_default_timezone_set ("America/New_York");
 
 
-	App::import('View',	'View');
-	$view =	new	View($controller);
-	$html =	$view->loadHelper('Html');
+	App::import('Helper', 'Html');
+	$html =	new HtmlHelper(new View(null));
 
 	/*
 		setting	site url
