@@ -158,7 +158,7 @@ class UsersController extends UserMgmtAppController	{
 					$this->User->save($this->request->data,false);
 					$userId=$this->User->getLastInsertID();
 					$user =	$this->User->findById($userId);
-					if (sendRegistrationMail) {
+					if (sendRegistrationMail && !emailVerification) {
 						$this->User->sendRegistrationMail($user);
 					}
 					if (emailVerification) {
@@ -352,6 +352,9 @@ class UsersController extends UserMgmtAppController	{
 					if ($activateKey==$theKey) {
 						$user['User']['active']=1;
 						$this->User->save($user,false);
+						if (sendRegistrationMail && emailVerification) {
+							$this->User->sendRegistrationMail($user);
+						}
 						$this->Session->setFlash(__('Thank you,	your account is	activated now'));
 					}
 				} else {
