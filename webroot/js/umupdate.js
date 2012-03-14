@@ -16,25 +16,25 @@ function update_fields(value) {
 		j++;
 	}
 	var xmlHttpReq = false;
-    var self = this;
-    // Mozilla/Safari
-    if (window.XMLHttpRequest) {
-        self.xmlHttpReq = new XMLHttpRequest();
-    }
-    // IE
-    else if (window.ActiveXObject) {
-        self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    self.xmlHttpReq.open('POST', url+'update_permission', true);
-    self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    self.xmlHttpReq.onreadystatechange = function() {
-        if (self.xmlHttpReq.readyState == 4) {
+	var self = this;
+	// Mozilla/Safari
+	if (window.XMLHttpRequest) {
+		self.xmlHttpReq = new XMLHttpRequest();
+	}
+	// IE
+	else if (window.ActiveXObject) {
+		self.xmlHttpReq = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	self.xmlHttpReq.open('POST', url+'update_permission', true);
+	self.xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	self.xmlHttpReq.onreadystatechange = function() {
+		if (self.xmlHttpReq.readyState == 4) {
 			if (self.xmlHttpReq.responseText==1) {
 				document.getElementById("updateDiv"+value).innerHTML="<font color='green'>Saved</font>";
 			} else {
 				document.getElementById("updateDiv"+value).innerHTML="<font color='red'>Failed</font>";
 			}
-        }
-    }
-    self.xmlHttpReq.send(qstr);
+		}
+	}
+	self.xmlHttpReq.send(qstr);
 }
