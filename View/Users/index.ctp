@@ -51,7 +51,7 @@
 								$sl++;
 								echo "<tr>";
 								echo "<td>".$sl."</td>";
-								echo "<td>".h($row['User']['first_name'])." ".h($row['User']['last_name'])."</td>";
+								echo "<td>".h($row['User']['name'])."</td>";
 								echo "<td>".h($row['User']['username'])."</td>";
 								echo "<td>".h($row['User']['email'])."</td>";
 								echo "<td>".h($row['UserGroup']['name'])."</td>";

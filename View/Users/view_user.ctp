@@ -47,12 +47,8 @@
 								<td><?php echo h($user['User']['username'])?></td>
 							</tr>
 							<tr>
-								<td><strong><?php echo __('First Name');?></strong></td>
-								<td><?php echo h($user['User']['first_name'])?></td>
-							</tr>
-							<tr>
-								<td><strong><?php echo __('Last Name');?></strong></td>
-								<td><?php echo h($user['User']['last_name'])?></td>
+								<td><strong><?php echo __('Full Name');?></strong></td>
+								<td><?php echo h($user['User']['name'])?></td>
 							</tr>
 							<tr>
 								<td><strong><?php echo __('Email');?></strong></td>

@@ -86,16 +86,10 @@ class User extends UserMgmtAppModel {
 						'message'=> 'Username must be greater than 3 characters',
 						'last'=>true),
 					),
-				'first_name'=> array(
+				'name'=> array(
 					'mustNotEmpty'=>array(
 						'rule' => 'notEmpty',
-						'message'=> 'Please enter first name')
-					),
-				'last_name'=> array(
-					'mustNotEmpty'=>array(
-						'rule' => 'notEmpty',
-						'on' => 'create',
-						'message'=> 'Please enter last name')
+						'message'=> 'Please enter full name')
 					),
 				'email'=> array(
 					'mustNotEmpty'=>array(
@@ -158,7 +152,7 @@ class User extends UserMgmtAppModel {
 		$email->to($user['User']['email']);
 		$email->subject('Your registration is complete');
 		//$email->transport('Debug');
-		$body="Welcome ".$user['User']['first_name'].", Thank you for your registration on ".SITE_URL." \n\n Thanks,\n".emailFromName;
+		$body="Welcome ".$user['User']['name'].", Thank you for your registration on ".SITE_URL." \n\n Thanks,\n".emailFromName;
 		try{
 			$result = $email->send($body);
 		} catch (Exception $ex) {
@@ -185,7 +179,7 @@ class User extends UserMgmtAppModel {
 		$email->subject('Email Verification Mail');
 		$activate_key = $this->getActivationKey($user['User']['password']);
 		$link = Router::url("/userVerification?ident=$userId&activate=$activate_key",true);
-		$body="Hi ".$user['User']['first_name'].", Click the link below to complete your registration \n\n ".$link;
+		$body="Hi ".$user['User']['name'].", Click the link below to complete your registration \n\n ".$link;
 		try{
 			$result = $email->send($body);
 		} catch (Exception $ex){
@@ -223,7 +217,7 @@ class User extends UserMgmtAppModel {
 		$email->subject(emailFromName.': Request to Reset Your Password');
 		$activate_key = $this->getActivationKey($user['User']['password']);
 		$link = Router::url("/activatePassword?ident=$userId&activate=$activate_key",true);
-		$body= "Welcome ".$user['User']['first_name'].", let's help you get signed in
+		$body= "Welcome ".$user['User']['name'].", let's help you get signed in
 
 You have requested to have your password reset on ".emailFromName.". Please click the link below to reset your password now :
 
@@ -316,7 +310,7 @@ emailFromName;
 	 */
 	public function getNameById($userId) {
 		$res = $this->findById($userId);
-		$name=(!empty($res)) ? ($res['User']['first_name'].' '.$res['User']['last_name']) : '';
+		$name=(!empty($res)) ? $res['User']['name'] : '';
 		return $name;
 	}
 }

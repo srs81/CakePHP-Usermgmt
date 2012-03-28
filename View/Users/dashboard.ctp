@@ -32,7 +32,7 @@
 			<div class="umhr"></div>
 			<div class="um_box_mid_content_mid">
 				<div class="um_box_mid_content_mid_left">
-					Hello <?php echo h($user['User']['first_name']).' '.h($user['User']['last_name']); ?>
+					Hello <?php echo h($user['User']['name']); ?>
 					<br/><br/>
 			<?php   if ($this->UserAuth->getGroupName()=='Admin') { ?>
 						<span  class="umstyle6"><?php echo $this->Html->link(__("Add User",true),"/addUser") ?></span><br/><br/>

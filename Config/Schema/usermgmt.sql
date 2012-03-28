@@ -16,8 +16,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(100) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `first_name` varchar(100) DEFAULT NULL,
-  `last_name` varchar(100) DEFAULT NULL,
+  `name` varchar(100) DEFAULT NULL,
   `active` varchar(3) DEFAULT '0',
   `created` datetime DEFAULT NULL,
   `modified` datetime DEFAULT NULL,
@@ -28,8 +27,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
 
 
-INSERT INTO `users` (`id`, `user_group_id`, `username`, `password`, `email`, `first_name`, `last_name`, `active`, `created`, `modified`) VALUES
-(1, 1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'admin@admin.com', 'Admin', NULL, '1', now(), now());
+INSERT INTO `users` (`id`, `user_group_id`, `username`, `password`, `email`, `name`, `active`, `created`, `modified`) VALUES
+(1, 1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', 'admin@admin.com', 'Admin', '1', now(), now());
 
 
 CREATE TABLE IF NOT EXISTS `user_groups` (
