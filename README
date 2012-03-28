@@ -1,3 +1,9 @@
+This is a fork of the original UserMgmt CakePHP plugin with the following changes:
+- /dashboard changed to /user_dashboard
+- "first_name" and "last_name" fields merged into "name" field, to make it easier for models associated with "users" table and for CakePHP's displayField auto-magic to work.
+
+====================
+
 UserMgmt is a User Management Plugin for cakephp 2.0 or 2.1
 Plugin version 1.0 (Stable)
 
