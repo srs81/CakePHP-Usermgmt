@@ -19,7 +19,7 @@
 */
 ?>
 <div id="dashboard">
-	<div style="float:left"><?php echo $this->Html->link(__("Dashboard",true),"/dashboard") ?></div>
+	<div style="float:left"><?php echo $this->Html->link(__("Dashboard",true),"/user_dashboard") ?></div>
 <?php   if ($this->UserAuth->getGroupName()=='Admin') { ?>
 	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("Add User",true),"/addUser") ?></div>
 	<div style="float:left;padding-left:10px"><?php echo $this->Html->link(__("All Users",true),"/allUsers") ?></div>

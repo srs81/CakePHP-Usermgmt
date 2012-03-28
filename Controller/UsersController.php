@@ -137,7 +137,7 @@ class UsersController extends UserMgmtAppController {
 	public function register() {
 		$userId = $this->UserAuth->getUserId();
 		if ($userId) {
-			$this->redirect("/dashboard");
+			$this->redirect("/user_dashboard");
 		}
 		if (siteRegistration) {
 			$userGroups=$this->UserGroup->getGroupsForRegistration();
@@ -193,7 +193,7 @@ class UsersController extends UserMgmtAppController {
 				$this->request->data['User']['password'] = $this->UserAuth->makePassword($this->request->data['User']['password']);
 				$this->User->save($this->request->data,false);
 				$this->Session->setFlash(__('Password changed successfully'));
-				$this->redirect('/dashboard');
+				$this->redirect('/user_dashboard');
 			}
 		}
 	}

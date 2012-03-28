@@ -66,7 +66,7 @@ function UsermgmtInIt(&$controller) {
 	/*
 		set login redirect url, it means when user gets logged in then site will redirect to this url.
 	*/
-	define("loginRedirectUrl", '/dashboard');
+	define("loginRedirectUrl", '/user_dashboard');
 
 	/*
 		set logout redirect url, it means when user gets logged out then site will redirect to this url.
