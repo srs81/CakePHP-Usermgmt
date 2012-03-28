@@ -31,7 +31,7 @@
 			<div class="umhr"></div>
 			<div class="um_box_mid_content_mid">
 				<div class="um_box_mid_content_mid_left">
-					Sorry, You don't have permission to view that page. go to <span  class="umstyle6"><?php echo $this->Html->link(__("Dashboard",true),"/dashboard") ?></span><br/><br/>
+					Sorry, You don't have permission to view that page. go to <span  class="umstyle6"><?php echo $this->Html->link(__("Dashboard",true),"/user_dashboard") ?></span><br/><br/>
 					<br/><br/>
 				</div>
 				<div class="um_box_mid_content_mid_right" align="right"></div>
